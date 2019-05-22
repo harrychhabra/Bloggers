@@ -39,3 +39,35 @@ def AddBlog(request):
 		blog_object.save()
 
 	return redirect(reverse('homepage'))
+
+def ViewBlog(request, id):
+
+	blog_object = Blog.objects.filter(pk__exact = id)
+
+	if len(blog_object) > 0:
+		data = {
+			'object':blog_object[0],
+		}
+	else:
+		data = {}
+
+	html_page = loader.get_template('DetailedView.html')
+
+	return HttpResponse(html_page.render({'data':data}))
+
+
+
+def ViewTrending(request, id):
+
+	trending_object = Trending.objects.filter(pk__exact = id)
+
+	if len(trending_object) > 0:
+		data = {
+			'object':trending_object[0],
+		}
+	else:
+		data = {}
+
+	html_page = loader.get_template('DetailedView.html')
+
+	return HttpResponse(html_page.render({'data':data}))

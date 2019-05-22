@@ -1,0 +1,35 @@
+{% load static %}
+<html>
+	<head>
+		<title>Blog Site</title>
+
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+	</head>
+
+
+	<body>
+		
+
+		{% include 'navbar.html' %}
+
+		
+		<div class="container mt-3">
+			
+			<div class="row">
+				
+				<div class="col-12">
+					
+					<h2>{{data.object.title}}</h2>
+					<br>
+					<div class="px-4 text-justify" style="font-size: 15px;">{{data.object.content|safe}}</div>
+				</div>
+
+			</div>
+
+		</div>
+		
+	</body>
+
+
+</html>

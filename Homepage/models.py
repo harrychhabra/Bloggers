@@ -10,4 +10,5 @@ class Blog(models.Model):
 
 
 class Trending(models.Model):
-	topic_name = models.CharField(max_length = 255, blank = False)
+	title = models.CharField(max_length = 255, blank = False)
+	content = models.TextField(blank = False)
